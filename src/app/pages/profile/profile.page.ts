@@ -1,15 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
   styleUrls: ['./profile.page.scss'],
 })
-export class ProfilePage implements OnInit {
+export class ProfilePage {
+  // Example user data
+  user = {
+    name: 'John Doe',
+    email: 'johndoe@gmail.com',
+    profilePicture: 'assets/images/avatar.png', // Example image
+    bio: 'Travel enthusiast and photographer.',
+  };
 
-  constructor() { }
+  // Static data for favorite and visited places
+  favoritePlaces = [
+    { name: 'Gateway of India', city: 'Mumbai' },
+    { name: 'Charminar', city: 'Hyderabad' },
+  ];
 
-  ngOnInit() {
-  }
+  visitedPlaces = [
+    { name: 'Marine Drive', city: 'Mumbai' },
+    { name: 'Golconda Fort', city: 'Hyderabad' },
+  ];
 
+  constructor() {}
 }

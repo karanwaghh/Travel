@@ -1,13 +1,41 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header>
+  <ion-toolbar color="primary">
     <ion-title>Profile</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Profile</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <!-- User Profile Info -->
+  <div class="profile-info">
+    <ion-avatar>
+      <img [src]="user.profilePicture" alt="Profile Picture" />
+    </ion-avatar>
+    <h2>{{ user.name }}</h2>
+    <h4>{{user.email}}</h4>
+    <p>{{ user.bio }}</p>
+  </div>
+
+  <!-- Favorite Places -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Favorite Places</ion-card-title>
+    </ion-card-header>
+    <ion-list>
+      <ion-item *ngFor="let place of favoritePlaces">
+        <ion-label>{{ place.name }}, {{ place.city }}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+  <!-- Visited Places -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Visited Places</ion-card-title>
+    </ion-card-header>
+    <ion-list>
+      <ion-item *ngFor="let place of visitedPlaces">
+        <ion-label>{{ place.name }}, {{ place.city }}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card>
 </ion-content>
